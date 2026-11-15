@@ -1,0 +1,6 @@
+# Monthly rollup dependencies.
+# Works on the legacy stack (pandas 1.0.1 / numpy 1.19 / pyarrow 12 on Python 3.7)
+# and on modern versions. Loosely pinned so it installs cleanly on a fresh machine.
+pandas>=1.0
+numpy>=1.18
+pyarrow>=8.0

@@ -1,0 +1,29 @@
+Notebooks here need a human decision before use. Reasons:
+
+Swing strategy 3 - Long - OPTIMIZED.ipynb
+  ORIGINAL has a pre-existing bug (broadcasts a constant 'Rolling min' to every row instead of a proper rolling value, due to a loop-indexing slip). This OPTIMIZED version computes the mathematically correct row-aligned value instead - it does NOT match current production output. Decide: replicate the bug for exact parity, or ship the corrected version.
+
+Swing strategy 3 - Short - OPTIMIZED.ipynb
+  Same issue as the Long version - see that note.
+
+TEMA Strategy 4 - Long - OPTIMIZED.ipynb
+  Uses a different Func() signature (flat price_data + filter, not PRICE_BY_KEY dict) that the validation harness doesn't support. The code pattern is identical to every other notebook here, but this one specifically was never exercised by the automated test - do a manual smoke test before trusting it.
+
+TEMA Strategy 4 - Short - OPTIMIZED.ipynb
+  Same issue as the Long version - see that note.
+
+1-2-3-4 pattern - Long - with parallelization.ipynb
+  Uses ADX, whose Wilder-smoothing recursion has quirky/inconsistent indexing in the `ta` library itself - vectorizing it safely was judged too risky given the time available. Original (unoptimized, still O(n^2)) code only.
+
+1-2-3-4 pattern - Short - with parallelization.ipynb
+  Same as the Long version - see that note.
+
+Monday_strategy - Long - with parallelization.ipynb
+  Pre-existing bug in the ORIGINAL: references an undefined variable (RSI_n) inside the loop - this notebook would crash if run as-is, independent of any optimization work. Needs your own fix before it's usable at all.
+
+Monday_strategy - Short - with parallelization.ipynb
+  Same as the Long version - see that note.
+
+OBV RSI 3 Day Strategy - Long - with parallelization.ipynb
+  Needs a 'volume' column that isn't present in the available data, so it could not be run or validated here. Original (unoptimized) code only.
+

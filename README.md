@@ -1,10 +1,10 @@
 # Walk-Forward Backtest Pipeline
 
+[![CI](https://github.com/Avinash186200/walk-forward-backtest-pipeline/actions/workflows/ci.yml/badge.svg)](https://github.com/Avinash186200/walk-forward-backtest-pipeline/actions/workflows/ci.yml) ![Python](https://img.shields.io/badge/python-3.11-blue) [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
 A five-step pipeline that turns a large library of strategy backtests (many strategies x instruments x long/short x parameter grids) into a monthly, walk-forward selection that is traded and measured only on data it has not seen. It also asks the question that matters most in this kind of work: **how much of the result comes from choosing the best of many?**
 
 I built the original as notebooks and scripts for books of FX, commodity and large-cap equity strategies. That data is proprietary, so this repo runs on a **synthetic backtest library with the same structure** (iterations, trades, daily prices), and every number below can be reproduced from a clone.
-
-[![CI](../../actions/workflows/ci.yml/badge.svg)](../../actions/workflows/ci.yml)
 
 ## At a glance
 
@@ -92,6 +92,15 @@ python scripts/run_pipeline.py --signal-strength 0    # no edge: selection shoul
 python scripts/run_pipeline.py --min-trades 0 --cost-bps 0
 ```
 
+## Original research code
+
+[`original/`](original/README.md) holds the code as I first wrote it for this work, sanitised and nothing else:
+client, company and person names replaced, credentials and local paths removed, data files and notebook outputs
+dropped. It is kept so the real work can be read alongside the maintained version. Some of it contains the issues
+described above; comparing the two shows each fix.
+
 ## License
 
 MIT
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) and the [CHANGELOG](CHANGELOG.md).
