@@ -1,10 +1,9 @@
-# The firm — FX & Commodities Backtesting Project
+# FX & Commodities Backtesting Project
 ## May 2026 | Master Documentation
 
 **Project Root:** `<local-path>`
 **Code Folder:**  `...\New Selection tech\Code for Portfolio`
 **Documented:**   May 2026
-**Prepared by:**  The firm
 
 ---
 
@@ -448,4 +447,4 @@ python slippage_1pip_reports.py     # 1-pip per leg (2-pip round-trip)
 
 ---
 
-*This documentation covers all work performed in the The firm FX & Commodities backtesting project, May 2026. All Python scripts are copied to the `Code\` subfolder of this documentation folder for archival.*
+*This documentation covers all work performed in the FX & Commodities backtesting project, May 2026. All Python scripts are copied to the `Code\` subfolder of this documentation folder for archival.*
